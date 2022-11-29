@@ -6,7 +6,7 @@ import (
 
 	"go.temporal.io/sdk/client"
 
-	"github.com/michaelEC/temporal-helloworld"
+	"github.com/michaelChunEC/temporal-helloworld"
 )
 
 func main() {
@@ -22,12 +22,12 @@ func main() {
 		TaskQueue: "hello-world",
 	}
 
-	we, err := c.ExecuteWorkflow(context.Background(), workflowOptions, helloworld.Workflow, "Person")
+	we, err := c.ExecuteWorkflow(context.Background(), workflowOptions, helloworld.Workflow, "World")
 	if err != nil {
 		log.Fatalln("Unable to execute workflow", err)
 	}
-
 	log.Println("Started workflow", "WorkflowID", we.GetID(), "RunID", we.GetRunID())
+
 
 	// Synchronously wait for the workflow completion.
 	var result string
@@ -36,5 +36,4 @@ func main() {
 		log.Fatalln("Unable get workflow result", err)
 	}
 	log.Println("Workflow result:", result)
-	
 }

@@ -1,4 +1,4 @@
-module github.com/michaelchunEC/temporal-helloworld
+module github.com/michaelChunEC/temporal-helloworld
 
 go 1.19
 
