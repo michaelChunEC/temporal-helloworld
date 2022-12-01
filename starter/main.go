@@ -22,7 +22,7 @@ func main() {
 		TaskQueue: "hello-world",
 	}
 
-	we, err := c.ExecuteWorkflow(context.Background(), workflowOptions, helloworld.Workflow, "World")
+	we, err := c.ExecuteWorkflow(context.Background(), workflowOptions, helloworld.Workflow, "Crypto World")
 	if err != nil {
 		log.Fatalln("Unable to execute workflow", err)
 	}
@@ -32,6 +32,7 @@ func main() {
 	// Synchronously wait for the workflow completion.
 	var result string
 	err = we.Get(context.Background(), &result)
+	
 	if err != nil {
 		log.Fatalln("Unable get workflow result", err)
 	}

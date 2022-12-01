@@ -23,8 +23,8 @@ func main() {
 	w := worker.New(c, "hello-world", worker.Options{})
 
 	w.RegisterWorkflow(helloworld.Workflow)
-	w.RegisterActivity(helloworld.Activity1)
-	w.RegisterActivity(helloworld.Activity2)
+	w.RegisterActivity(helloworld.ActivityOne)
+	w.RegisterActivity(helloworld.ActivityTwo)
 
 	err = w.Run(worker.InterruptCh())
 	if err != nil {
